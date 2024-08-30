@@ -87,9 +87,10 @@ let createAnswers = async () => {
   let offer = document.getElementById('offer-sdp').value;
   if (!offer) return alert('Retrieve offer from peer first ');
 
+  console.log(offer);
   offer = JSON.parse(offer);
+  console.log(offer);
   await peerConnection.setRemoteDescription(offer);
-
   let answer = await peerConnection.createAnswer();
   await peerConnection.setLocalDescription(answer);
 
